@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ff4e05;
+  --secondary-color-dark: #bf3900;
+  --text-dark: #0d1319;
+  --text-light: #9ca3af;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  color: red;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section__title span {
+  color: var(--secondary-color);
+}
+
+.section__subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+body {
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: var(--max-width);
+  padding: 1rem;
+}
+
+nav .nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black
+}
+
+nav .nav__logo a span {
+  color: var(--secondary-color);
+}
+
+header {
+  height: 100vh;
+  background-image: url("college.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: black;
+}
+.header__container p {
+  color: black;
+  max-width: 400px;
+  margin: 1rem 0;
+  font-size: 14px;
+}
+.header__container p span {
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+.header__container h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+  color:black;
+}
+.action__btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action__btns .video {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.action__btns .video .play {
+  height: 50px;
+  width: 50px;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  border-radius: 100%;
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.action__btns .video span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.action__btns .video:hover .play {
+  background-color: var(--secondary-color-dark);
+}
+
+.about,
+.project {
+  background-color: var(--text-dark);
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about__image,
+.about__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about__image img {
+  max-width: 350px;
+}
+
+.about__details {
+  padding: 2rem 0;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.service,
+footer {
+  background-color: var(--primary-color);
+}
+
+.service__grid,
+.project__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.service__card {
+  display: grid;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--text-dark);
+  border-radius: 5px;
+}
+
+.service__card i {
+  font-size: 1.5rem;
+}
+
+.service__card h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.service__card p {
+  color: var(--text-light);
+}
+
+.service__card .read__more {
+  width: max-content;
+  padding: 0.5rem 1rem;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.project__card {
+  display: grid;
+  place-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project__card img {
+  transition: scale 0.3s;
+}
+
+.project__card:hover img {
+  scale: 1.1;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.footer__details {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin: 2rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.social__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social__icons .icon {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.social__icons .icon:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+.footer__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.footer__form :is(input, textarea) {
+  padding: 1rem;
+  background-color: var(--text-dark);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+}
+
+.footer__form textarea {
+  resize: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer__form button {
+  width: max-content;
+}
+
+/* Media queries */
+
+@media (min-width: 640px) {
+  .section__title {
+    font-size: 2.5rem;
+  }
+
+  .header__container p {
+    margin: 2rem 0;
+  }
+
+  .header__container h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .action__btns {
+    gap: 2rem;
+  }
+
+  .about__container {
+    flex-direction: row;
+  }
+
+  .about__content {
+    align-items: flex-start;
+  }
+
+  .about__details {
+    text-align: left;
+  }
+
+  .service__grid,
+  .project__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .header__container h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  .service__grid,
+  .project__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+
+
+
+  /* Created by Tivotal */
+
+
+
+.menu {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle {
+  width: 60px;
+  height: 60px;
+  background: #000;
+  border-radius: 50%;
+  font-size: 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: 1.5s;
+}
+.menu.active .menu-toggle {
+  transform: rotate(315deg);
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  /* transform: rotate(calc(360deg / 8 * var(--i))); */
+  transform: rotate(0deg) translateX(105px);
+  transform-origin: 130px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu li a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  rotate: 135deg;
+  font-size: 22px;
+  color: transparent;
+  transition-delay: 1.5s;
+}
+
+.menu.active li a {
+  color: var(--clr);
+}
+
+.menu.active li a i {
+  transform: rotate(-135deg);
+}
+
+.menu li a::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: var(--clr);
+  border: 2px solid var(--clr);
+  border-radius: 10px;
+  transform: rotate(calc(90deg * var(--i))) translate(0, 40px);
+  transition: width 0.5s, height 0.5s, transform 0.5s;
+  transition-delay: 1.5s, 1.5s, 1s;
+}
+
+.menu.active li a::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border: 2px solid var(--clr);
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--clr);
+  transform: rotate(0);
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 1.5s, 1.5s;
+}
+
+.menu.active li:hover a::before {
+  box-shadow: 0 0 20px var(--clr);
+}
+ 
+
+}
+    </style>
+
+    <title>Web Design Mastery | Personal Portfolio Page</title>
+  </head>
+  <body>
+  
+    <nav>
+      <div class="nav__logo"><a href="#">Cod<span>e</span>r.</a></div>
+    </nav>
+    <header>
+      <div class="section__container header__container">
+        <p><span>Hello</span> I'm</p>
+        <h3>Devansh Gupta</h3>
+        <h2 class="section__title">Final Year <span>Undergrad. Student.</span></h2>
+        <p>
+          Welcome to my  portfolio! I'm Devansh Gupta,Final-year Electrical Engineering
+           student with expertise in Data Structures and Algorithms (DSA) and a strong focus on problem-solving. Passionate about applying theoretical knowledge to practical challenges and developing efficient, innovative solutions.
+        </p>
+        <div class="action__btns">
+          <button class="btn">Say Hello</button>
+          <a href="#" class="video">
+            
+            <span><a href="https://drive.google.com/file/d/1agmoAKWl5cihEReokGGvv2OxUQa72j-_/view?usp=drive_link" target=”_blank” attribute>Resume</a></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <section class="about">
+      <div class="section__container about__container">
+        <div class="about__image">
+          <img src="me.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <h2 class="section__title">About <span>Me</span></h2>
+          <p class="section__subtitle">Becoming a software devoloper</p>
+          <p class="about__details">
+            As a final-year Electrical Engineering student, I have developed a comprehensive
+             understanding of various subjects, including Data Structures and Algorithms, 
+             Operating Systems, Database Management, Computer Networks, Object Oriented Programming.
+              My expertise extends to programming languages such as  Javascript, and C++, with
+              
+              a keen interest in problem-solving and optimization.Alongside my academic pursuits,
+              I have honed my skills as an intermediate full-stack developer, 
+              proficient in both front-end and back-end technologies. My expertise
+               includes programming language such as  JavaScript,
+                as well as frameworks like React and Node.js. I am passionate about 
+                creating efficient, scalable web applications and solving complex problems 
+                through innovative solutions
+          </p>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="service">
+      <div class="section__container service__container">
+        <p class="section__subtitle">What I learnt!</p>
+        <h2 class="section__title"><span>My</span> Technical Skills</h2>
+        <div class="service__grid">
+          <div class="service__card">
+            <i class="ri-smartphone-line"></i>
+            <h4>Core Subjest</h4>
+            <p>
+              DATASTRUCUTRES AND ALGORITHMS (DSA) in C++,
+DATABASE MANAGEMENT SYSTEM(DBMS),
+OPERATING SYSTEM(OS), COMPUTER NETWORKING(CN), ONJECT ORIENTED PROGRAMMING (OOPS)
+
+             
+            </p>
+            
+          </div>
+          <div class="service__card">
+            <i class="ri-code-s-slash-line"></i>
+            <h4>Web Development</h4>
+            <p>
+              HTML, CSS, JAVASCRIPT, REACTJS, TAILWIND CSS, SQL, EXPRESSJS, MONGODB, NODEJS
+            </p>
+         
+          </div>
+          <div class="service__card">
+            <i class="ri-edit-2-line"></i>
+            <h4>Tools</h4>
+            <p>
+              GIT , VS Code
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="section__container project__container">
+       
+        <h2 class="section__title"><span>Lin</span> ks</h2>
+        
+        <div class="project__grid">
+          <div class="project__card">
+            <a href="https://github.com/deva766825gupta?tab=repositories" target="_blank">GitHub</a>
+        </div>
+        <div class="project__card">
+            <a href="https://www.linkedin.com/in/devansh-g-14a334225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+        </div>
+        
+          <div class="project__card">
+            <a href="https://leetcode.com/u/deva766825_gupta/" target=”_blank” attribute>Leetcode</a>
+          </div>
+          <div class="project__card">
+            <a href="https://codeforces.com/profile/deva766825" target=”_blank” attribute>Codeforces</a>
+          </div>
+          <div class="project__card">
+            <a href="https://www.geeksforgeeks.org/user/devdtu6l4/" target=”_blank” attribute>GFG</a>
+          </div>
+          <div class="project__card">
+            <a href="mailto:devanshg755@gmail.com" >Send email</a>
+            <a href="tel:+91 7668257925">+91 7668257925</a>
+
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__content">
+          <h2 class="section__title">Contact <span>Me!</span></h2>
+          
+          <div class="footer__details">
+            <p>
+              You can reach me through the contact form provided on this
+              website. Simply fill out the form with your name, email address,
+              and message, and I will get back to you as soon as possible.
+            </p>
+            
+          </div>
+          <div class="social__icons">
+            
+            <a href="#" class="icon"><i class="ri-mail-line"></i></a>
+            
+            <a href="#" class="icon"><i class="ri-linkedin-fill"></i></a>
+          </div>
+        </div>
+        <form class="footer__form">
+          <input type="text" placeholder="Your Name" />
+          <input type="text" placeholder="Your Email Address" />
+          <input type="text" placeholder="Your Phone Number" />
+          <textarea cols="30" rows="10" placeholder="Your Idea"></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </footer>
+  
+
+   
+    <script>
+      /* Created by Tivotal */
+
+let toggleBtn = document.querySelector(".menu-toggle");
+let menu = document.querySelector(".menu");
+
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+    </script>
+  </body>
+</html>
